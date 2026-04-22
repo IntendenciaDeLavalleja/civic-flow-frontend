@@ -1,0 +1,85 @@
+# ──────────────────────────────────────────────
+# JAVASCRIPT / TYPESCRIPT / NODE
+# ──────────────────────────────────────────────
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Vite / local config
+*.local
+
+# ──────────────────────────────────────────────
+# PYTHON / FLASK
+# ──────────────────────────────────────────────
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env.bak
+
+# Bytecode & caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+
+# Package distribution
+*.egg-info/
+*.egg
+build/
+wheels/
+
+# Flask instance folder (sqlite, uploads, etc.)
+backend/instance/
+instance/
+*.db
+*.sqlite3
+
+# Coverage / pytest
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# mypy / pyright
+.mypy_cache/
+.dmypy.json
+.pyright/
+
+# ──────────────────────────────────────────────
+# ENVIRONMENT & SECRETS (NEVER COMMIT)
+# ──────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ──────────────────────────────────────────────
+# EDITOR & OS
+# ──────────────────────────────────────────────
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,43 @@
+# Dependencies — installed inside the container via npm ci
+node_modules
+
+# Build output
+dist
+
+# Git metadata
+.git
+.gitignore
+.gitattributes
+
+# Backend (separate service, not needed for frontend build)
+backend/
+sample-backend/
+sample-frontend/
+
+# IDE / editor config
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Docker files (avoid recursive context)
+Dockerfile
+docker-compose*.yml
+nginx.conf
+
+# Env files (vars are injected as build args in Coolify)
+.env
+.env.*
+!.env.example
+
+# Scripts / extras not needed in container
+scripts/
+dist/
+
+# Misc
+*.md

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CivicFlow — Plataforma de gestión pública y seguimiento de proyectos" />
+    <title>CivicFlow</title>
+    <script>
+      (function () {
+        var t = localStorage.getItem('theme') || 'light';
+        if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
