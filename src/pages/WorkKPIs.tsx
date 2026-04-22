@@ -14,6 +14,7 @@ import {
 import { FiArrowLeft, FiHardDrive } from 'react-icons/fi';
 import { useWorks, useWorkKpis } from '../api/hooks/useWorks';
 import { useUnits } from '../api/hooks/useUnits';
+import SemicircleGauge from '../components/common/SemicircleGauge';
 import useAuth from '../store/useAuth';
 
 const STATUS_COLORS: Record<string, string> = {
@@ -143,6 +144,34 @@ const WorkKPIs = () => {
               </BarChart>
             </ResponsiveContainer>
           )}
+        </section>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px', marginTop: '12px' }}>
+        <section style={panelStyle}>
+          <SemicircleGauge
+            value={data.kpis.completion_rate}
+            min={0}
+            max={100}
+            label='Cumplimiento'
+            size='100%'
+            strokeWidth={9}
+            color='#8b5cf6'
+            backgroundColor='rgba(148, 163, 184, 0.18)'
+          />
+        </section>
+
+        <section style={panelStyle}>
+          <SemicircleGauge
+            value={data.kpis.avg_progress}
+            min={0}
+            max={100}
+            label='Avance promedio'
+            size='100%'
+            strokeWidth={9}
+            color='#f59e0b'
+            backgroundColor='rgba(148, 163, 184, 0.18)'
+          />
         </section>
       </div>
     </div>

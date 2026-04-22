@@ -2,11 +2,11 @@ import { useParams, Link } from 'react-router-dom';
 import {
   PieChart, Pie, Cell, Tooltip, ResponsiveContainer,
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend,
-  RadialBarChart, RadialBar,
 } from 'recharts';
 import { FiArrowLeft } from 'react-icons/fi';
 import { useTasksByProject } from '../api/hooks/useTasks';
 import { useProjectById } from '../api/hooks/useProjects';
+import SemicircleGauge from '../components/common/SemicircleGauge';
 import { STATUS_LABELS, PRIORITY_LABELS, STATUS_COLORS, PRIORITY_COLORS } from '../types';
 import type { TaskStatus, TaskPriority } from '../types';
 
@@ -128,13 +128,18 @@ const KPIs = () => {
 
         {/* Completion radial */}
         <ChartCard title="Tasa de completitud">
-          <ResponsiveContainer width="100%" height={300}>
-            <RadialBarChart cx="50%" cy="50%" innerRadius="40%" outerRadius="80%" data={[{ name: 'Completado', value: completionRate, fill: '#4ade80' }, { name: 'Pendiente', value: 100 - completionRate, fill: 'var(--skeleton)' }]}>
-              <RadialBar dataKey="value" cornerRadius={4} />
-              <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" fill="var(--text)" fontSize={28} fontWeight={700}>{completionRate}%</text>
-              <Tooltip contentStyle={tooltipStyle} />
-            </RadialBarChart>
-          </ResponsiveContainer>
+          <div style={{ minHeight: 300, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 12px 0' }}>
+            <SemicircleGauge
+              value={completionRate}
+              min={0}
+              max={100}
+              label="Completado"
+              size="100%"
+              strokeWidth={9}
+              color="#4ade80"
+              backgroundColor="rgba(148, 163, 184, 0.18)"
+            />
+          </div>
         </ChartCard>
 
         {/* Responsible workload */}
